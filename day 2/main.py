@@ -1,0 +1,6 @@
+print ("welcome to the tip calculator ^_^")
+bill = input("how much is your bill? $")
+people = input("\nhow many people? ")
+tip = input("\nwhat percentage do u want to tip? %")
+total=(float(bill)/float(people))*(float(tip)/100) 
+print ("your bill total is "+ str(total))                                         

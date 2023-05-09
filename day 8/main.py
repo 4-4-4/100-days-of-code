@@ -5,25 +5,20 @@ text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
 
-def encrypt(text,shift):  
-    cipher =""
-    for n in text:
-        i= alphabet.index(n)
-        cipher+=alphabet[i+shift]
-        
-    print("the encoded text is "+cipher)
-def decrypt(text, shift):
-    cipher =""
-    shift += 26
-    for n in text:
-        i= alphabet.index(n)
-        cipher+=alphabet[i-shift]
-    print("the encoded text is "+cipher)
-if direction==("encode"):
-    encrypt(text, shift)
 
-elif direction=="decode":
-    decrypt(text, shift )
-
-else:
-    print("Wrong input")
+def caeser(text,shift,direction):
+    cipher =""
+    if direction == "encode":
+        for n in text:
+            i= alphabet.index(n)
+            cipher+=alphabet[i+shift] 
+        print("the encoded text is "+cipher)
+    elif direction == "decode":
+        shift += 26
+        for n in text:
+            i= alphabet.index(n)
+            cipher+=alphabet[i-shift]
+        print("the encoded text is "+cipher)  
+    else:
+        print("wrong input") 
+caeser(text,shift,direction)

@@ -12,5 +12,18 @@ def encrypt(text,shift):
         cipher+=alphabet[i+shift]
         
     print("the encoded text is "+cipher)
-def decrypt
-encrypt(text,shift)
+def decrypt(text, shift):
+    cipher =""
+    shift += 26
+    for n in text:
+        i= alphabet.index(n)
+        cipher+=alphabet[i-shift]
+    print("the encoded text is "+cipher)
+if direction==("encode"):
+    encrypt(text, shift)
+
+elif direction=="decode":
+    decrypt(text, shift )
+
+else:
+    print("Wrong input")

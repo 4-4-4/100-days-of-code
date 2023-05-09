@@ -1,4 +1,4 @@
-#Step 1 
+'''#Step 1 
 import random
 word_list = ["aardvark", "baboon", "camel"]
 
@@ -14,7 +14,8 @@ n=0
 while n <= len(word):
     print(guess in word[n-1])
     n+=1
-
+'''
+'''
 #Step 2
 
 import random
@@ -45,4 +46,39 @@ while n <= len(word):
 
 #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
 #Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
+print(display) '''
+
+#Step 3
+
+import random
+word_list = ["aardvark", "baboon", "camel"]
+word = random.choice(word_list)
+word_length = len(word)
+
+#Testing code
+print(f'Pssst, the solution is {word}.')
+
+#Create blanks
+display = []
+for _ in range(word_length):
+    display += "_"
+
+#TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won.
+while "_" in display:
+    guess = input("Guess a letter: ").lower()
+    n=1
+    while n <= len(word):
+        if guess in word[n-1]:
+            display[n-1]= '"'+guess+'"'
+        n+=1
+    print (display)
+else:
+    print("you won")
+#Check guessed letter
+for position in range(word_length):
+    letter = word[position]
+    print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+    if letter == guess:
+        display[position] = letter
+
 print(display)
